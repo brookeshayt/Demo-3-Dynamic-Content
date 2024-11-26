@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: arial, sans-serif;
+}
+
+/* set rules for areas */
+.content-area {
+    width: 80%;
+    margin: auto;
+    padding: 0 100px;
+}
+
+/* chair-scene.svg */
+.cls-1 {
+    fill: #568b62;
+}
+
+.cls-2 {
+    fill: #923e0f;
+}
+
+.cls-3 {
+    fill: #764b00;
+}
+
+.cls-4 {
+    fill: #df986d;
+}
+
+.cls-5 {
+    stroke-linecap: round;
+}
+
+.cls-5,
+.cls-6 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+.cls-7 {
+    fill: #ff976d;
+}
+
+.cls-8 {
+    fill: #ff926d;
+}
+
+.cls-9 {
+    fill: #fff;
+}
+
+.cls-10 {
+    fill: #006837;
+}
+
+.cls-11 {
+    fill: #eabca0;
+}
+
+/* Different states of animals */
+#Doggo-Play, #cat-eye-open, #cat-eye-angry, #dog-eye-open{
+    display: none;
+}
