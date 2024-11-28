@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Reenie+Beanie&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -11,7 +13,14 @@ body {
 .content-area {
     width: 80%;
     margin: auto;
-    padding: 0 100px;
+    padding: 100px;
+}
+
+blockquote{
+    font-family: 'Reenie Beanie';
+    font-size: 5vw;
+    height: 5vw;
+    text-align: center;
 }
 
 /* chair-scene.svg */

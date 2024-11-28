@@ -29,26 +29,68 @@ $('#Doggo').on('click', function () {
     }
 });
 
-$('#Cat').on('click', function () {
-    console.log('You poked the bear');
+$('#Cat').on('mouseenter', function () {
+    console.log('mouse entered the region of the cat');
+    $('#cat-eye-closed, #cat-eye-angry').hide();
+    $('#cat-eye-open').show();
+});
+
+$('#Cat').on('mouseleave', function () {
+    console.log('mouse left the region of the cat');
+    $('#cat-eye-closed').show();
+    $('#cat-eye-open, #cat-eye-angry').hide();
+});
+
+$('#Cat').on('click', function () {     //when we click on the cat, the eye either closes or you get an angry meow at random.
+    console.log('You clicked the cat');
+
+    var random = Math.floor(Math.random() * 2);
+    console.log(random);
+
+    if (random == 0) {
+        $('#cat-eye-closed').show();
+        $('#cat-eye-open, #cat-eye-angry').hide();
+    } else {
+        $('#cat-eye-angry').show();
+        $('#cat-eye-open, #cat-eye-closed').hide();
+        catmeow.play();
+    }
 
     catcount++;
     console.log(catcount);
-
-    $('#cat-eye-closed').hide();
-    $('#cat-eye-open').show();
-
-    if (catcount == 1) {
-        $('#cat-eye-closed').hide();
-        $('#cat-eye-open').show();
-    } else if (catcount == 2) {
-        catmeow.play();
-    }
-    else if (catcount == 3) {
-        $('#Cat').hide();
-        catcount = 0;
+    if (catcount == 10) {
+        console.log('The cat left');
+        $('#cat-eye-angry').show();
+        $('#cat-eye-open, #cat-eye-closed').hide();
+        $('#Cat').fadeOut(2000);
     }
 });
+
+var quote1 = "Mi casa es mi casa—get your own.";
+var quote2 = "Paws and Reflect";
+var quote3 = "Home is where I scratch the furniture most";
+var quote4 = "Bloom where you're planted—or where you've buried your treats";
+
+var quotes = [quote1, quote2, quote3, quote4];
+var colors = ["#568b62", "#ff976d", "#404E7C", "#62466B", "#073B3A", "#8884FF", "#563440", "#AABD8C"]
+
+var quoteCounter = 0;
+
+function changeQuote() {
+    if (quoteCounter == quotes.length) {
+        quoteCounter = 0;
+    }
+    $('blockquote').text(quotes[quoteCounter])
+    quoteCounter++;
+
+    var randomColor = Math.floor(Math.random() * colors.length);
+    $('blockquote').css('color', colors[randomColor]);
+};
+setInterval(changeQuote, 4000);
+
+
+
+
 
 
 
